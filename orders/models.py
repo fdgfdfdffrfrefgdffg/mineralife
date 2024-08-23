@@ -13,5 +13,5 @@ class Order(models.Model):
     sana_vaqt = models.DateTimeField()
     dastavka = models.BooleanField()
     eslatma = models.CharField(max_length=300)
-    auto = models.IntegerField()
+    auto = models.CharField()
     status = models.BooleanField(default=True)
