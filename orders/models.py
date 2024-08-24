@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 class Order(models.Model):
@@ -13,5 +12,5 @@ class Order(models.Model):
     sana_vaqt = models.DateTimeField()
     dastavka = models.BooleanField()
     eslatma = models.CharField(max_length=300)
-    auto = models.CharField()
+    auto = models.CharField(max_length=100)
     status = models.BooleanField(default=True)

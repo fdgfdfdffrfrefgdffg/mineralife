@@ -44,7 +44,12 @@ INSTALLED_APPS = [
     "kontragent",
     "orders",
     "products",
-    "viloyattuman",
+    "viloyat",
+    "tuman",
+    "xarita",
+    'tolov',
+    'dastavka',
+    'dastavkachi',
     "users",
     "api"
 ]
@@ -124,7 +129,6 @@ USE_TZ = True
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ALLOWED_ORIGINS = True
 
 
 # Static files (CSS, JavaScript, Images)
