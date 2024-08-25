@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     "xarita",
     'tolov',
     'dastavka',
+    "autolar",
+    "ega",
     'dastavkachi',
     "users",
     "api"

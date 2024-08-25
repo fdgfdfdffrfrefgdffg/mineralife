@@ -7,7 +7,10 @@ import customers.models
 import orders.models
 import products.models
 import users.models
+import korzinka.models
 import xarita.models
+import ega.models
+import autolar.models
 import tolov.models
 from django.utils.dateparse import parse_date
 import kontragent.models
@@ -18,9 +21,14 @@ from django.shortcuts import get_object_or_404
 import tuman.models
 from rest_framework import status
 from django.utils import timezone
-from .serializers import CustomerSerializer, OrdersSerializer, ProductsSerializer, UsersSerializer, KontragentSerializer, ViloyatSerializer, TumanSerializer, TolovSerializer, XaritaSerializer, DastavkaSerializer, DastavkachiSerializer
+from .serializers import CustomerSerializer, KorzinkaSerializer, OrdersSerializer, ProductsSerializer, UsersSerializer, KontragentSerializer, ViloyatSerializer, TumanSerializer, TolovSerializer, XaritaSerializer, DastavkaSerializer, DastavkachiSerializer, EgaSerializer, AutosSerializer
 import customers
 # Create your views here.
+
+
+class AddKorzinka(ListCreateAPIView):
+    queryset = korzinka.models.Korzinka.objects.all()
+    serializer_class = KorzinkaSerializer
 
 class AddCustomer(ListCreateAPIView):
     queryset = customers.models.Customer.objects.all()
@@ -29,6 +37,26 @@ class AddCustomer(ListCreateAPIView):
 class EditCustomer(RetrieveUpdateDestroyAPIView):
     queryset = customers.models.Customer.objects.all()
     serializer_class = CustomerSerializer
+    lookup_field = 'id'
+
+
+class AddEga(ListCreateAPIView):
+    queryset = ega.models.Ega.objects.all()
+    serializer_class = EgaSerializer
+
+class EditEga(RetrieveUpdateDestroyAPIView):
+    queryset = ega.models.Ega.objects.all()
+    serializer_class = EgaSerializer
+    lookup_field = 'id'
+
+
+class AddAutolar(ListCreateAPIView):
+    queryset = autolar.models.Autolar.objects.all()
+    serializer_class = AutosSerializer
+
+class EditAutolar(RetrieveUpdateDestroyAPIView):
+    queryset = autolar.models.Autolar.objects.all()
+    serializer_class = AutosSerializer
     lookup_field = 'id'
 
 

@@ -4,6 +4,7 @@ from django.db import models
 class Dastavkachi(models.Model):
     fio = models.CharField(max_length=120)
     kol_bo = models.IntegerField()
-    manzil = models.CharField(max_length=300)
+    longitute = models.FloatField()
+    latitute = models.FloatField()
     sana = models.DateField()
     holat = models.BooleanField()

@@ -1,7 +1,7 @@
 from django.db import models
 # Create your models here.
 
-class Orders(models.Model):
+class Korzinka(models.Model):
     customer_id = models.IntegerField()
     fio = models.CharField(max_length=100)
     product = models.CharField(max_length=200)

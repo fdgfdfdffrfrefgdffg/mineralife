@@ -6,5 +6,5 @@ class Kontragent(models.Model):
     telefon = models.CharField(max_length=30)
     telefon2 = models.CharField(max_length=30)
     dokon_nomer= models.CharField(max_length=50)
-    manzil = models.CharField(max_length=300)
-    status = models.BooleanField(default=True)
+    longitute = models.FloatField()
+    latitute = models.FloatField()

@@ -7,6 +7,9 @@ import kontragent
 import viloyat.models
 import tuman.models
 import users.models
+import korzinka.models
+import autolar.models
+import ega.models
 import users
 import dastavkachi.models
 import tolov.models
@@ -21,6 +24,21 @@ class CustomerSerializer(serializers.ModelSerializer):
 class OrdersSerializer(serializers.ModelSerializer):
     class Meta:
         model = orders.models.Order
+        fields = "__all__"
+
+class KorzinkaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = korzinka.models.Korzinka
+        fields = "__all__"
+
+class EgaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ega.models.Ega
+        fields = "__all__"
+
+class AutosSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = autolar.models.Autolar
         fields = "__all__"
 
 class ProductsSerializer(serializers.ModelSerializer):
