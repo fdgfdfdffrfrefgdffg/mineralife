@@ -19,9 +19,10 @@ import dastavka.models
 import dastavkachi.models
 from django.shortcuts import get_object_or_404
 import tuman.models
+import users_img.models
 from rest_framework import status
 from django.utils import timezone
-from .serializers import CustomerSerializer, KorzinkaSerializer, OrdersSerializer, ProductsSerializer, UsersSerializer, KontragentSerializer, ViloyatSerializer, TumanSerializer, TolovSerializer, XaritaSerializer, DastavkaSerializer, DastavkachiSerializer, EgaSerializer, AutosSerializer
+from .serializers import CustomerSerializer, KorzinkaSerializer, OrdersSerializer, ProductsSerializer, UsersSerializer, KontragentSerializer, ViloyatSerializer, TumanSerializer, TolovSerializer, XaritaSerializer, DastavkaSerializer, DastavkachiSerializer, EgaSerializer, AutosSerializer, Users_imgSerializer
 import customers
 # Create your views here.
 
@@ -37,6 +38,15 @@ class AddCustomer(ListCreateAPIView):
 class EditCustomer(RetrieveUpdateDestroyAPIView):
     queryset = customers.models.Customer.objects.all()
     serializer_class = CustomerSerializer
+    lookup_field = 'id'
+
+class AddUsers_img(ListCreateAPIView):
+    queryset = users_img.models.UsersImg.objects.all()
+    serializer_class = Users_imgSerializer
+
+class EditUsers_img(RetrieveUpdateDestroyAPIView):
+    queryset = users_img.models.UsersImg.objects.all()
+    serializer_class = Users_imgSerializer
     lookup_field = 'id'
 
 

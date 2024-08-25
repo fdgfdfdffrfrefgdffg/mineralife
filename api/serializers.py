@@ -15,6 +15,12 @@ import dastavkachi.models
 import tolov.models
 import xarita.models
 import dastavka.models
+import users_img.models
+
+class Users_imgSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = users_img.models.UsersImg
+        fields = "__all__"
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:

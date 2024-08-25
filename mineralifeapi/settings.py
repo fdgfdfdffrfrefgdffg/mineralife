@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "viloyat",
     "tuman",
     "xarita",
+    'users_img',
     'tolov',
     'dastavka',
     "autolar",
