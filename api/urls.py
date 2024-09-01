@@ -1,5 +1,5 @@
 from django.urls import path
-from api.views import AddCustomer, AddUsers_img, AddAutolar, AddEga, AddKorzinka, AddDastavka, AddXarita, AddDastavkachi, AddTolov, EditCustomer , AddKontragent, AddOrder, AddProduct, AddTuman, AddViloyat, GetTuman, AddUsers, EditKontragent, EditOrder, EditProduct, EditUsers, EditTuman, EditViloyat, RejectOrdersList, DelTolov, EditTolov, EditXarita, EditDastavka, GetDastavkaAuto, GetDastavkaSana, GetOrderCustomer, GetOrderTuman, EditDastavkachi, EditAutolar, EditEga, EditUsers_img
+from api.views import AddCustomer, AddUsers_img, AddAutolar, AddEga, AddKorzinka, AddDastavka, AddXarita, AddDastavkachi, AddTolov, EditCustomer , AddKontragent, AddOrder, AddProduct, AddTuman, AddViloyat, GetTuman, AddUsers, EditKontragent, EditOrder, EditProduct, EditUsers, EditTuman, EditViloyat, RejectOrdersList, DelTolov, EditTolov, EditXarita, EditDastavka, GetDastavkaAuto, GetDastavkaSana, GetOrderCustomer, GetOrderTuman, EditDastavkachi, EditAutolar, EditEga, EditUsers_img, CustomerOrderStatsView
 
 urlpatterns = [
     path("customers/", AddCustomer .as_view(), name="add  "),
@@ -38,4 +38,5 @@ urlpatterns = [
     path("dastavkachi/<int:id>/", EditDastavkachi.as_view(), name="edit  "),
     path("dastavka/auto/<int:auto>/", GetDastavkaAuto.as_view(), name="edit  "),
     path("dastavka/sana/", GetDastavkaSana.as_view(), name="edit  "),
+    path("statistika/", CustomerOrderStatsView.as_view(), name="get  "),
 ]

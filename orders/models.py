@@ -1,7 +1,7 @@
 from django.db import models
 # Create your models here.
 
-class Orders(models.Model):
+class Order(models.Model):
     customer_id = models.IntegerField()
     fio = models.CharField(max_length=100)
     product = models.CharField(max_length=200)
@@ -10,7 +10,8 @@ class Orders(models.Model):
     tuman = models.CharField(max_length=120)
     longitute = models.FloatField()
     latitute = models.FloatField()
-    sana_vaqt = models.DateTimeField()
+    sana = models.DateField()
+    vaqt = models.TimeField()
     dastavka = models.BooleanField()
     eslatma = models.CharField(max_length=300)
     auto = models.CharField(max_length=100)

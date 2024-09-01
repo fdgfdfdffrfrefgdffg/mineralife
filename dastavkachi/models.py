@@ -8,3 +8,4 @@ class Dastavkachi(models.Model):
     latitute = models.FloatField()
     sana = models.DateField()
     holat = models.BooleanField()
+    auto = models.CharField(max_length=50)

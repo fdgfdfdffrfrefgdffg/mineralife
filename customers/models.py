@@ -6,3 +6,5 @@ class Customer(models.Model):
     telefon = models.CharField(max_length=30)
     longitute = models.FloatField()
     latitute = models.FloatField()
+    tuman = models.CharField(max_length=100)
+    

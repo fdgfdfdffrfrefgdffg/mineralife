@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "tuman",
     "xarita",
     'users_img',
+    "korzinka",
     'tolov',
     'dastavka',
     "autolar",
