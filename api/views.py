@@ -24,21 +24,21 @@ from rest_framework import status
 from django.utils import timezone
 from .serializers import CustomerSerializer, KorzinkaSerializer, OrdersSerializer, ProductsSerializer, UsersSerializer, KontragentSerializer, ViloyatSerializer, TumanSerializer, TolovSerializer, XaritaSerializer, DastavkaSerializer, DastavkachiSerializer, EgaSerializer, AutosSerializer, Users_imgSerializer
 import customers
-from .serializers import CustomerSerializer, OrderSerializer
+from .serializers import CustomerStatSerializer, OrderStatSerializer
 
 class CustomerOrderStatsView(APIView):
     def get(self, request, format=None):
-        customers = customers.models.Customer.objects.all()
+        customers1 = customers.models.Customer.objects.all()
         customer_stats = []
 
-        for customer in customers:
-            orders = orders.models.Order.objects.filter(customer_id=customer.id).order_by('sana')
-            if orders.exists():
-                first_order = orders.first()
-                order_count = orders.count()
+        for customer in customers1:
+            orders1 = orders.models.Order.objects.filter(customer_id=customer.id).order_by('sana')
+            if orders1.exists():
+                first_order = orders1.first()
+                order_count = orders1.count()
                 customer_stats.append({
-                    'customer': CustomerSerializer(customer).data,
-                    'first_order': OrderSerializer(first_order).data,
+                    'customer': CustomerStatSerializer(customer).data,
+                    'first_order': OrderStatSerializer(first_order).data,
                     'order_count': order_count
                 })
 
@@ -46,7 +46,7 @@ class CustomerOrderStatsView(APIView):
         sorted_customer_stats = sorted(customer_stats, key=lambda x: x['order_count'], reverse=True)
 
         return Response({
-            'customer_count': customers.count(),
+            'customer_count': customers1.count(),
             'customer_stats': sorted_customer_stats
         })
 
