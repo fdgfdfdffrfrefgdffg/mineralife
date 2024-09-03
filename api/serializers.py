@@ -26,6 +26,15 @@ class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = customers.models.Customer
         fields = "__all__"
+class CustomerStatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = customers.models.Customer
+        fields = ['fio', 'telefon', 'tuman']
+
+class OrderStatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = orders.models.Order
+        fields = ['sana', 'suv_miqdori', 'viloyat', 'tuman']
 
 class OrdersSerializer(serializers.ModelSerializer):
     class Meta:
