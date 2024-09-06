@@ -8,4 +8,3 @@ class Kontragent(models.Model):
     dokon_nomer= models.CharField(max_length=50)
     longitute = models.FloatField()
     latitute = models.FloatField()
-    status = models.CharField(max_length=50)
