@@ -9,5 +9,3 @@ class Dastavka(models.Model):
     naqt = models.FloatField()
     plastik = models.FloatField()
     sana = models.DateField()
-    auto = models.CharField(max_length=50)
-    holat = models.BooleanField()

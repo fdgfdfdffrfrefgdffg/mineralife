@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
-    fio = models.CharField(max_length=200)
+    user_id = models.CharField(max_length=200)
     telefon = models.CharField(max_length=20)
     manzil = models.CharField(max_length=300)
     lavozimlar = models.CharField(max_length=50)

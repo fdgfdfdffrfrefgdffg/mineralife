@@ -193,6 +193,20 @@ class GetOrderCustomer(ListAPIView):
         customer_id = self.kwargs.get('customer_id')
         return orders.models.Order.objects.filter(customer_id=customer_id)
 
+class GetUser(ListAPIView):
+    serializer_class = UsersSerializer
+
+    def get_queryset(self):
+        user_id = self.kwargs.get('user_id')
+        return  users.models.User.objects.filter(user_id=user_id)
+
+class GetCustomer(ListAPIView):
+    serializer_class = CustomerSerializer
+
+    def get_queryset(self):
+        customer_id = self.kwargs.get('customer_id')
+        return  users.models.User.objects.filter(customer_id=customer_id)
+
 class GetOrderTuman(ListAPIView):
     serializer_class = OrdersSerializer
 
