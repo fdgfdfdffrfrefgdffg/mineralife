@@ -26,6 +26,28 @@ from .serializers import CustomerSerializer, KorzinkaSerializer, OrdersSerialize
 import customers
 from .serializers import CustomerStatSerializer, OrderStatSerializer
 
+class LatestThreeObjectsView(APIView):
+    def get(self, request):
+        latest_objects = orders.models.Order.objects.all().order_by('-created_at')[:3]
+        serializer = OrdersSerializer(latest_objects, many=True)
+        return Response(serializer.data)
+
+class AllModelsCount(APIView):
+    def get(self, request):
+        orders_count = orders.models.Order.objects.count()
+        users_count = users.models.User.objects.count()
+        customers_count = customers.models.Customer.objects.count()
+        autos_count = autolar.models.Autolar.objects.count()
+        products_count = products.models.Product.objects.count()
+        return Response({
+            "orderss": orders_count,
+            "users": users_count,
+            "customers": customers_count,
+            "autos": autos_count,
+            "products": products_count
+        })
+
+
 class CustomerOrderStatsView(APIView):
     def get(self, request, format=None):
         customers1 = customers.models.Customer.objects.all()
