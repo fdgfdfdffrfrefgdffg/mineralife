@@ -226,8 +226,8 @@ class GetCustomer(ListAPIView):
     serializer_class = CustomerSerializer
 
     def get_queryset(self):
-        customer_id = self.kwargs.get('customer_id')
-        return  users.models.User.objects.filter(customer_id=customer_id)
+        customer_name = self.kwargs.get('customer_name')
+        return  customers.models.Customer.objects.filter(customer_name=customer_name)
 
 class GetOrderTuman(ListAPIView):
     serializer_class = OrdersSerializer
