@@ -6,6 +6,7 @@ from django.http import HttpResponse
 import customers.models
 import orders.models
 import products.models
+from datetime import datetime, timedelta
 import users.models
 import korzinka.models
 import xarita.models
@@ -95,6 +96,12 @@ class EditUsers_img(RetrieveUpdateDestroyAPIView):
     serializer_class = Users_imgSerializer
     lookup_field = 'id'
 
+class RecentOrdersListView(ListAPIView):
+    serializer_class = OrdersSerializer
+
+    def get_queryset(self):
+        one_day_ago = datetime.now() - timedelta(days=1)
+        return orders.models.Order.objects.filter(sana__gte=one_day_ago)
 
 class AddEga(ListCreateAPIView):
     queryset = ega.models.Ega.objects.all()

@@ -1,5 +1,5 @@
 from django.urls import path
-from api.views import AddCustomer, AddUsers_img, AddAutolar, AddEga, AddKorzinka, AddDastavka, AddXarita, AddDastavkachi, AddTolov, EditCustomer , AddKontragent, AddOrder, AddProduct, AddTuman, AddViloyat, GetTuman, AddUsers, EditKontragent, EditOrder, EditProduct, EditUsers, EditTuman, EditViloyat, RejectOrdersList, DelTolov, EditTolov, EditXarita, EditDastavka, GetDastavkaAuto, GetDastavkaSana, GetOrderCustomer, GetOrderTuman, EditDastavkachi, EditAutolar, EditEga, EditUsers_img, CustomerOrderStatsView, GetUser, GetCustomer, LatestThreeObjectsView, AllModelsCount
+from api.views import AddCustomer, AddUsers_img, AddAutolar, AddEga, AddKorzinka, AddDastavka, AddXarita, AddDastavkachi, AddTolov, EditCustomer , AddKontragent, AddOrder, AddProduct, AddTuman, AddViloyat, GetTuman, AddUsers, EditKontragent, EditOrder, EditProduct, EditUsers, EditTuman, EditViloyat, RejectOrdersList, DelTolov, EditTolov, EditXarita, EditDastavka, GetDastavkaAuto, GetDastavkaSana, GetOrderCustomer, GetOrderTuman, EditDastavkachi, EditAutolar, EditEga, EditUsers_img, CustomerOrderStatsView, GetUser, GetCustomer, LatestThreeObjectsView, AllModelsCount, RecentOrdersListView
 
 urlpatterns = [
     path("customers/", AddCustomer .as_view(), name="add  "),
@@ -43,4 +43,5 @@ urlpatterns = [
     path("statistika/", CustomerOrderStatsView.as_view(), name="get  "),
     path('latest-three/', LatestThreeObjectsView.as_view(), name='latest-three-objects'),
     path('objects_count/', AllModelsCount.as_view(), name='object-count'),
+    path('recent-orders/', RecentOrdersListView.as_view(), name='recent-orders'),
 ]
